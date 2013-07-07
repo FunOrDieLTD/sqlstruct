@@ -93,11 +93,6 @@ func getFieldInfo(typ reflect.Type) fieldInfo {
 	return finfo
 }
 
-func ScanRow(dest interface{}, row Row) error {
-	err := Scan(dest, row.Rows)
-	return err
-}
-
 // Scan scans the next row from rows in to a struct pointed to by dest. The struct type
 // should have exported fields tagged with the "sql" tag. Columns from row which are not
 // mapped to any struct fields are ignored. Struct fields which have no matching column
